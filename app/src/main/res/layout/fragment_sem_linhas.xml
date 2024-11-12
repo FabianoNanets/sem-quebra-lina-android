@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.semquebradelinha.SemLinhasViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".SemLinhasFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/fab_margin">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="@dimen/fab_margin"
+                android:background="@drawable/button_designer"
+                android:gravity="center"
+                android:text="@string/title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/area_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                android:maxLines="@integer/max_lines"
+                android:minLines="@integer/min_lines"
+                android:text="@{viewModel.areaText}"
+                android:hint="@string/hint_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleTextView"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/remove_break_line"
+                android:layout_width="0dp"
+                android:padding="@dimen/button_padding"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/fab_margin"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_marginEnd="@dimen/fab_margin"
+                android:background="@drawable/button_designer"
+                android:text="@string/remove_break_lLine"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/clean_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/area_text" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/clean_text"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_marginEnd="@dimen/fab_margin"
+                android:background="@drawable/button_designer"
+                android:text="@string/clean_text"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/remove_break_line"
+                app:layout_constraintTop_toBottomOf="@id/area_text" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/copy_text"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/fab_margin"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_marginEnd="@dimen/fab_margin"
+                android:background="@drawable/button_designer"
+                android:text="@string/copy_text"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/remove_break_line" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/word_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fab_margin"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_marginEnd="@dimen/fab_margin"
+                android:maxLines="1"
+                android:minLines="1"
+                android:hint="@string/search_word"
+                android:text="@{viewModel.selectWord}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/copy_text"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_word"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/fab_margin"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_marginEnd="@dimen/fab_margin"
+                android:background="@drawable/button_designer"
+                android:text="@string/select_word"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@id/bottomTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/word_text"
+                app:layout_constraintVertical_bias="0" />
+
+            <TextView
+                android:id="@+id/bottomTextView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/layout_height_footer"
+                android:layout_marginBottom="@dimen/fab_margin"
+                android:background="@drawable/button_designer"
+                android:gravity="center"
+                android:text="@string/footler_developer"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size"
+                app:flow_verticalAlign="bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

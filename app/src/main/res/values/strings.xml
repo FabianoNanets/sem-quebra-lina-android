@@ -1,0 +1,13 @@
+<resources>
+    <string name="action_settings">Action</string>
+    <string name="app_name">Sem Quebra de Linha</string>
+    <string name="sem_quebra_linha">Sem Quebra de Linha</string>
+    <string name="remove_break_lLine">Remover Quebra de Linha</string>
+    <string name="select_word">Buscar Palavra</string>
+    <string name="copy_text">Copiar Texto</string>
+    <string name="clean_text">Limpar Texto</string>
+    <string name="title">Sem Quebra de Linha</string>
+    <string name="hint_text">Digite o texto aqui</string>
+    <string name="search_word">Palavra para busca</string>
+    <string name="footler_developer">Direitos recervados @ 2024\nFabiano Amaro Costa</string>
+</resources>
